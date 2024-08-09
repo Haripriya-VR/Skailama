@@ -1,0 +1,87 @@
+#root {
+    --theam: #7E22CE;
+    --textcolor: #838383;
+    --textFamily: Roboto;
+}
+
+.theamColor {
+    color: var(--theam);
+}
+
+.Sidebar {
+    background-color: #F3E8FF;
+}
+
+.backgroundColor  {
+    background-color: var(--theam);
+}
+.theamBorder{
+    border-color: var(--theam);
+}
+.iconColors{
+    background: #49454F;
+
+    
+}
+.createProjectText {
+    color: var(--textcolor);
+    font-family: var(--textFamily);
+}
+
+.square-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--theam);
+    line-height: 0px;
+    font-size: 0;
+    margin: 24px 0px 0px 5px;
+}
+
+.ButtonText {
+    font-family: var(--textFamily);
+}
+
+.iconColors .borderColor {
+    background: #999999;
+
+}
+.textColor{
+    color :#999999
+}
+.projectDetailText{
+    color:#49454F;
+    
+}
+.uploadButton{
+    background: #211935;
+}
+.canncelSubscription{
+  color: #FF274C;
+
+}
+.Widget_title p {
+    color: #3C3C3C; 
+    padding: 20px 20px 50px 40px;  
+}
+/* scroll bar */
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #D4D4D8; 
+    border-radius: 10px;
+    border: 3px solid transparent; 
+    background-clip: padding-box; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #A3A3A3; 
+}
+
+
