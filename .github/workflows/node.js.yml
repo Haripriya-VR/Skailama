@@ -21,19 +21,3 @@ jobs:
       run: |
         mkdir -p Skailama/Skailama/Server
         echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Skailama/Server/.env
-
-  setup-env-skailama:
-    runs-on: self-hosted
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Create .env file for Skailama
-      run: |
-        mkdir -p Skailama/Skailama/Skailama
-        echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Skailama/Skailama/.env
-
