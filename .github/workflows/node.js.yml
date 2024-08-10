@@ -25,7 +25,7 @@ jobs:
       run: npm ci
       working-directory: Skailama/Skailama/Server
     - run: |
-        touch Skailama/Server/.env
+        touch Skailama/Skailama/Server/.env
         echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Server/.env
 
   build-skailama:
@@ -46,5 +46,5 @@ jobs:
       run: npm ci
       working-directory: Skailama/Skailama/Skailama
     - run: |
-        touch Skailama/Skailama/.env
+        touch  Skailama/Skailama/Skailama/.env
         echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Skailama/.env
