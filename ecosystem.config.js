@@ -2,8 +2,8 @@ module.exports = {
     apps: [
       {
         name: 'server',
-        script: './Skailama/Server/index.js',
-        cwd: './Skailama/Skailama/Server', // Current working directory
+        script: 'Server/index.js', // Path relative to the ecosystem.config.js file
+        cwd: './', // Current working directory for the script
         instances: 1,
         autorestart: true,
         watch: false,
@@ -11,8 +11,8 @@ module.exports = {
       },
       {
         name: 'skailama',
-        script: './Skailama/Skailama/index.js', // Or replace with your main script
-        cwd: './Skailama/Skailama', // Current working directory
+        script: 'Skailama/index.js', // Path relative to the ecosystem.config.js file
+        cwd: './', // Current working directory for the script
         instances: 1,
         autorestart: true,
         watch: false,
