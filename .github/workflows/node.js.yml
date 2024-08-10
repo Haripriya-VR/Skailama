@@ -29,5 +29,5 @@ jobs:
     - run: npm ci
     - run: |
           touch .env
-          echo "${{secrets.SKALIAMA_ENV_FILE}}" > .env
+          echo "${{secrets.SKLAMA_ENV_FILE}}" > .env
     
