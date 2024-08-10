@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Debug Checkout
+      run: ls -R
     - name: Use Node.js ${{ matrix.node-version }} for Server
       uses: actions/setup-node@v4
       with:
@@ -37,6 +39,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Debug Checkout
+      run: ls -R
     - name: Use Node.js ${{ matrix.node-version }} for Skailama
       uses: actions/setup-node@v4
       with:
@@ -45,4 +49,6 @@ jobs:
     - name: Install Dependencies (Skailama)
       run: npm ci
       working-directory: Skailama
-    
+    - run: |
+        touch Skailama/.env
+        echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/.env
