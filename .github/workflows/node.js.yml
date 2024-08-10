@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-server:
+  setup-env-server:
     runs-on: self-hosted
 
     strategy:
@@ -16,39 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: List Repository Contents (Server)
-      run: ls -R
-    - name: Use Node.js ${{ matrix.node-version }} for Server
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Install Dependencies (Server)
-      run: npm ci
-      working-directory: Skailama/Skailama/Server
-    - run: |
-        touch Skailama/Skailama/Server/.env
-        echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Server/.env
 
-  build-skailama:
-    runs-on: self-hosted
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: List Repository Contents (Skailama)
-      run: ls -R
-    - name: Use Node.js ${{ matrix.node-version }} for Skailama
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Install Dependencies (Skailama)
-      run: npm ci
-      working-directory: Skailama/Skailama/Skailama
-    - run: |
-        touch Skailama/Skailama/Skailama/.env
-        echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Skailama/.env
+    - name: Create .env file for Server
+      run: |
+        mkdir -p Skailama/Skailama/Server
+        echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Skailama/Server/.env
