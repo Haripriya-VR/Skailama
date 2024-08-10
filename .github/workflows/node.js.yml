@@ -25,9 +25,9 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies (Server)
       run: npm ci
-      working-directory: Skailama/Server
+      working-directory: Skailama/Skailama/Server
     - run: |
-        touch Skailama/Server/.env
+        touch Skailama/Skailama/Server/.env
         echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Server/.env
 
   build-skailama:
@@ -48,7 +48,7 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies (Skailama)
       run: npm ci
-      working-directory: Skailama/Skailama
+      working-directory: Skailama/Skailama/Skailama
     - run: |
-        touch Skailama/Skailama/.env
+        touch Skailama/Skailama/Skailama/.env
         echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Skailama/.env
