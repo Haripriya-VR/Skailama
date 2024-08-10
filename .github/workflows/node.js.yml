@@ -45,6 +45,4 @@ jobs:
     - name: Install Dependencies (Skailama)
       run: npm ci
       working-directory: Skailama
-    - run: |
-        touch Skailama/.env
-        echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/.env
+    
