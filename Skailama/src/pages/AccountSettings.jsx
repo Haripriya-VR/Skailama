@@ -4,7 +4,7 @@ import BreadCrumps from '../components/breadcrumps/BreadCrumps';
 import Arrow from '../components/icons/Arrow';
 import Language from '../components/icons/Language';
 import Notifications from '../components/icons/Notifications';
-import profilePic from '../../public/profile.png';
+import profilePic from '../assets/profile.png';
 import { BACKEND_BASE_URL } from '../constants/constant';
 import axios from 'axios';
 

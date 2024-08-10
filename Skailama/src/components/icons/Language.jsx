@@ -1,6 +1,6 @@
 import React from 'react'
-import image from '../../../public/image.png'
-
+// import image from '../../../public/image.png'
+import image from '../../assets/image.png'
 function Language() {
   return (
     <div>
