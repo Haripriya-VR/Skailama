@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: List Repository Contents (Server)
+      run: ls -R
     - name: Use Node.js ${{ matrix.node-version }} for Server
       uses: actions/setup-node@v4
       with:
@@ -23,9 +25,9 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies (Server)
       run: npm ci
-      working-directory: Skailama/Skailama/Server
+      working-directory: Skailama/Server
     - run: |
-        touch Skailama/Skailama/Server/.env
+        touch Skailama/Server/.env
         echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Server/.env
 
   build-skailama:
@@ -37,6 +39,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: List Repository Contents (Skailama)
+      run: ls -R
     - name: Use Node.js ${{ matrix.node-version }} for Skailama
       uses: actions/setup-node@v4
       with:
@@ -44,7 +48,7 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies (Skailama)
       run: npm ci
-      working-directory: Skailama/Skailama/Skailama
+      working-directory: Skailama/Skailama
     - run: |
-        touch  Skailama/Skailama/Skailama/.env
+        touch Skailama/Skailama/.env
         echo "${{ secrets.SKLAMA_ENV_FILE }}" > Skailama/Skailama/.env
